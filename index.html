@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UNSC faction operations portal for Roblox SCP:RP.">
+  <title>UNSC // Operational Command</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="UNSC home"><span>UNSC</span><small>OPERATIONAL COMMAND</small></a>
+    <nav aria-label="Primary"><a href="#operations">Operations</a><a href="#roster">Roster</a><a href="#announcements">Intel</a><a href="#morphs">Morph Generator</a></nav>
+    <button id="themeButton" class="icon-button" title="Toggle contrast" aria-label="Toggle contrast">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">UNITED NATIONS SPACE COMMAND // SCP:RP</p><h1>HOLD THE LINE.<br><em>SECURE THE UNKNOWN.</em></h1><p id="heroMessage">Personnel and operational intelligence, synced live from command.</p><div class="hero-actions"><a class="button primary" href="#morphs">Generate Morph</a><a class="button ghost" href="#operations">View Situation Report</a></div></div>
+      <div class="status-panel"><p class="panel-label">SYSTEM STATUS</p><div class="status-row"><span class="pulse"></span><span>UPLINK</span><strong id="syncStatus">CONNECTING</strong></div><div class="status-row"><span class="indicator"></span><span>THEATER</span><strong id="theater">SCP:RP</strong></div><div class="status-row"><span class="indicator"></span><span>LAST SYNC</span><strong id="lastSync">—</strong></div></div>
+    </section>
+
+    <section class="metrics" aria-label="Force metrics"><article><span id="metricRoster">—</span><small>Active Personnel</small></article><article><span id="metricOperations">—</span><small>Operations Logged</small></article><article><span id="metricAnnouncements">—</span><small>Command Notices</small></article></section>
+
+    <section id="announcements" class="section"><div class="section-heading"><p class="eyebrow">COMMAND INTELLIGENCE</p><h2>Announcements</h2></div><div id="announcementsGrid" class="announcement-grid"><p class="loading">Awaiting command uplink…</p></div></section>
+
+    <section id="operations" class="section"><div class="section-heading row"><div><p class="eyebrow">SITUATION REPORT</p><h2>Recent Operations & Deployments</h2></div><button class="text-button" id="operationFilter">All statuses ▾</button></div><div id="operationsList" class="operations-list"><p class="loading">Retrieving operation logs…</p></div></section>
+
+    <section id="roster" class="section"><div class="section-heading row"><div><p class="eyebrow">PERSONNEL FILES</p><h2>Unit Roster</h2></div><label class="search"><span>⌕</span><input id="rosterSearch" type="search" placeholder="Search username, codename, rank…"></label></div><div class="filter-row" id="unitFilters"></div><div id="rosterGrid" class="roster-grid"><p class="loading">Opening personnel files…</p></div></section>
+
+    <section id="morphs" class="section morph-section"><div class="section-heading"><p class="eyebrow">FIELD EQUIPMENT</p><h2>Morph Command Generator</h2><p>Select an approved configuration, enter your details, and copy the generated command into Roblox SCP:RP.</p></div><div class="generator"><form id="morphForm"><label>Approved preset<select id="morphPreset" required></select></label><div class="form-grid"><label>Roblox username<input id="morphUsername" maxlength="20" required placeholder="Spartan_117"></label><label>Codename<input id="morphCodename" maxlength="32" required placeholder="NOBLE SIX"></label></div><label>Rank<input id="morphRank" maxlength="40" required placeholder="Master Chief Petty Officer"></label><p id="presetDescription" class="field-note"></p><button class="button primary" type="submit">Generate Command</button></form><aside class="command-output"><p class="panel-label">READY TO DEPLOY</p><code id="morphResult">Select a preset and complete your personnel details.</code><button id="copyMorph" class="button ghost" disabled>Copy Command</button><p id="copyFeedback" class="field-note" aria-live="polite"></p></aside></div></section>
+  </main>
+  <footer><span>UNSC Operational Command</span><span>Not affiliated with Microsoft, 343 Industries, Roblox, or SCP:RP.</span></footer>
+  <template id="emptyState"><p class="empty">No records have been published yet. Command will update this section shortly.</p></template>
+  <script src="app.js"></script>
+</body>
+</html>
