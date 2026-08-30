@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>UNSC // Morph Generator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="scanlines"></div>
+
+<header class="topbar">
+
+  <a class="brand" href="index.html">
+    <span id="siteName">UNSC</span>
+    <small>OPERATIONAL COMMAND</small>
+  </a>
+
+  <nav>
+    <a href="index.html">Command</a>
+    <a href="operations.html">Operations</a>
+    <a href="roster.html">Personnel</a>
+    <a href="announcements.html">Intel</a>
+    <a href="morphs.html">Morphs</a>
+    <a href="settings.html">System</a>
+  </nav>
+
+  <button id="themeButton" class="icon-button">◐</button>
+
+</header>
+
+
+<main>
+
+<section class="page-header">
+
+  <p class="eyebrow">FIELD EQUIPMENT</p>
+
+  <h1>Morph Generator</h1>
+
+  <p>
+    Generate commands from approved configurations published by command.
+  </p>
+
+</section>
+
+
+<section class="section">
+
+  <div class="generator">
+
+    <form id="morphForm">
+
+      <label>
+        Approved Preset
+
+        <select id="morphPreset" required>
+          <option>Loading presets...</option>
+        </select>
+
+      </label>
+
+
+      <div class="form-grid">
+
+        <label>
+          Roblox Username
+
+          <input
+            id="morphUsername"
+            maxlength="20"
+            required
+            placeholder="Spartan_117"
+          >
+        </label>
+
+
+        <label>
+          Codename
+
+          <input
+            id="morphCodename"
+            maxlength="32"
+            required
+            placeholder="NOBLE SIX"
+          >
+        </label>
+
+      </div>
+
+
+      <label>
+        Rank
+
+        <input
+          id="morphRank"
+          maxlength="40"
+          required
+          placeholder="Master Chief Petty Officer"
+        >
+      </label>
+
+
+      <p id="presetDescription" class="field-note"></p>
+
+
+      <button class="button primary" type="submit">
+        Generate Command
+      </button>
+
+    </form>
+
+
+    <aside class="command-output">
+
+      <p class="panel-label">
+        READY TO DEPLOY
+      </p>
+
+      <code id="morphResult">
+        Select a preset and complete your personnel details.
+      </code>
+
+      <button
+        id="copyMorph"
+        class="button ghost"
+        disabled
+      >
+        Copy Command
+      </button>
+
+      <p
+        id="copyFeedback"
+        class="field-note"
+        aria-live="polite"
+      ></p>
+
+    </aside>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  <span>UNSC Operational Command</span>
+  <span>Field Equipment Database</span>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
