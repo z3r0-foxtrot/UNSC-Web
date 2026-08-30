@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>UNSC // Personnel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="scanlines"></div>
+
+<header class="topbar">
+
+  <a class="brand" href="index.html">
+    <span id="siteName">UNSC</span>
+    <small>OPERATIONAL COMMAND</small>
+  </a>
+
+  <nav>
+    <a href="index.html">Command</a>
+    <a href="operations.html">Operations</a>
+    <a href="roster.html">Personnel</a>
+    <a href="announcements.html">Intel</a>
+    <a href="morphs.html">Morphs</a>
+    <a href="settings.html">System</a>
+  </nav>
+
+  <button id="themeButton" class="icon-button">◐</button>
+
+</header>
+
+
+<main>
+
+<section class="page-header">
+
+  <p class="eyebrow">PERSONNEL FILES</p>
+
+  <h1>Unit Roster</h1>
+
+  <p>
+    Current personnel assignments and organizational status.
+  </p>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-heading row">
+
+    <div>
+      <p class="eyebrow">PERSONNEL DATABASE</p>
+      <h2>Active Forces</h2>
+    </div>
+
+    <label class="search">
+      <span>⌕</span>
+      <input
+        id="rosterSearch"
+        type="search"
+        placeholder="Search personnel..."
+      >
+    </label>
+
+  </div>
+
+  <div id="unitFilters" class="filter-row"></div>
+
+  <div id="rosterGrid" class="roster-grid">
+    <p class="loading">
+      Opening personnel files...
+    </p>
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  <span>UNSC Operational Command</span>
+  <span>Personnel Database</span>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
